@@ -1,0 +1,288 @@
+````md id="r4t8kp"
+# Java Programming – UNIT IV : Packages and Java Library
+
+This repository contains Java programs and notes related to **Packages, Java Library, and Exception Handling** concepts in Java programming.
+
+---
+
+# 📘 Topics Covered
+
+## 1. Packages in Java
+
+### Introduction
+A package in Java is a collection of related classes and interfaces organized together.
+
+### Advantages of Packages
+- Avoids naming conflicts
+- Provides access protection
+- Makes code reusable and organized
+
+---
+
+# 📦 Defining a Package
+
+## Syntax
+
+```java
+package package_name;
+````
+
+## Example
+
+```java id="a1p2k3"
+package mypackage;
+
+class Demo {
+    void display() {
+        System.out.println("Package Example");
+    }
+}
+```
+
+---
+
+# 📥 Importing Packages and Classes
+
+Packages and classes can be imported using the `import` keyword.
+
+## Syntax
+
+```java
+import package_name.class_name;
+```
+
+## Example
+
+```java id="b4q5r6"
+import java.util.Scanner;
+```
+
+---
+
+# 🛤 Path and Class Path
+
+## Path
+
+* Specifies location of Java tools like `javac` and `java`
+
+## Class Path
+
+* Specifies location of compiled `.class` files and packages
+
+### Example
+
+```bash id="c7s8t9"
+set classpath=.;
+```
+
+---
+
+# 🔐 Access Control in Java
+
+## Access Modifiers
+
+| Modifier  | Access Level                             |
+| --------- | ---------------------------------------- |
+| public    | Accessible everywhere                    |
+| private   | Accessible only within class             |
+| protected | Accessible within package and subclasses |
+| default   | Accessible within package                |
+
+---
+
+# ⚠ Exception Handling in Java
+
+## Introduction
+
+Exception handling is used to handle runtime errors and maintain normal program execution.
+
+---
+
+# 🧱 Hierarchy of Standard Exception Classes
+
+```text id="d1u2v3"
+Throwable
+ ├── Error
+ └── Exception
+      ├── IOException
+      ├── ArithmeticException
+      ├── NullPointerException
+      └── ArrayIndexOutOfBoundsException
+```
+
+---
+
+# 🔑 Keywords `throw` and `throws`
+
+## throw
+
+Used to explicitly throw an exception.
+
+```java id="e4w5x6"
+throw new ArithmeticException("Error");
+```
+
+## throws
+
+Used to declare exceptions in method definition.
+
+```java id="f7y8z9"
+void display() throws IOException {
+}
+```
+
+---
+
+# 🧪 try, catch, and finally Blocks
+
+## Example
+
+```java id="g1h2i3"
+class ExceptionDemo {
+
+    public static void main(String args[]) {
+
+        try {
+            int a = 10 / 0;
+        }
+
+        catch(ArithmeticException e) {
+            System.out.println("Exception Caught");
+        }
+
+        finally {
+            System.out.println("Finally Block Executed");
+        }
+    }
+}
+```
+
+---
+
+# 🔄 Multiple Catch Clauses
+
+## Example
+
+```java id="j4k5l6"
+try {
+    int arr[] = new int[5];
+    arr[10] = 50;
+}
+
+catch(ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array Error");
+}
+
+catch(Exception e) {
+    System.out.println("General Exception");
+}
+```
+
+---
+
+# 🧩 Class Throwable
+
+* Root class for all exceptions and errors
+* Provides methods like:
+
+  * `getMessage()`
+  * `printStackTrace()`
+
+---
+
+# ✅ Checked Exceptions
+
+Checked exceptions are checked during compile time.
+
+## Examples
+
+* IOException
+* SQLException
+
+---
+
+# ❌ Unchecked Exceptions
+
+Unchecked exceptions occur during runtime.
+
+## Examples
+
+* ArithmeticException
+* NullPointerException
+* ArrayIndexOutOfBoundsException
+
+---
+
+# 💻 Sample Program
+
+```java id="m7n8o9"
+import java.util.Scanner;
+
+class Divide {
+
+    public static void main(String args[]) {
+
+        try {
+
+            int a = 10;
+            int b = 0;
+
+            int c = a / b;
+
+            System.out.println(c);
+        }
+
+        catch(ArithmeticException e) {
+
+            System.out.println("Cannot divide by zero");
+        }
+
+        finally {
+
+            System.out.println("Program Executed");
+        }
+    }
+}
+```
+
+---
+
+# 🛠 Requirements
+
+* Java JDK 8 or above
+* Any Java IDE or VS Code
+
+---
+
+# ▶️ How to Run
+
+## Compile
+
+```bash id="p1q2r3"
+javac FileName.java
+```
+
+## Execute
+
+```bash id="s4t5u6"
+java FileName
+```
+
+---
+
+# 🎯 Learning Outcomes
+
+* Understand Java packages and libraries
+* Learn access control mechanisms
+* Handle exceptions effectively
+* Use try-catch-finally blocks
+* Differentiate checked and unchecked exceptions
+
+---
+
+# 👨‍💻 Author
+
+Vinayak Goud Kasani
+
+```
+```
